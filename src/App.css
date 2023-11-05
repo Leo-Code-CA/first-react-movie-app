@@ -1,38 +1,497 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kanit:wght@100;300;700&display=swap');
+
+/* GENERAL STYLING */
+
+:root {
+  --font-bebas-neue: 'Bebas Neue', sans-serif;
+  --font-kanit: 'Kanit', sans-serif;
+
+  --light-black: #1f2123;
+  --transparent-black: rgba(249, 211, 180, 0.07);
+  --transparent-black-2: rgba(249, 211, 180, 0.04);
+  --dark-gray: #212426;
+  --gray: #343739;
+  --light-pink: rgb(249, 211, 180);
+  --white: #f0f0f0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  border: 0;
+  padding: 0;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
+body {
   min-height: 100vh;
+  width: 100%;
+  font-family: var(--font-kanit);
+  background-color: var(--dark-gray);
+  color: var(--light-pink);
+  font-size: 1rem;
+}
+
+.app {
+  max-width: min(100%, 1600px);
+  margin: 0 auto;
+  padding: 0.5rem;
   display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
+  gap: 2rem;
+}
+
+.app__title {
+  font-size: 2.8rem;
+  letter-spacing: 0.1rem;
+  text-shadow: 1.5rem 1.1rem 0.1rem var(--transparent-black-2);
+  background: linear-gradient(
+    90deg,
+    var(--light-pink),
+    var(--transparent-black)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* SEARCH BOX STYLING */
+
+.app__searchbox {
+  width: 90%;
+  border-radius: 1rem;
+  background-color: var(--light-black);
+  border: 0.08rem solid var(--light-pink);
+  overflow: hidden;
+}
+
+.app__searchbox-input {
+  padding: 0.7rem;
+  border-radius: 1rem;
+  width: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  background: var(--light-black);
 }
 
-.App-link {
-  color: #61dafb;
+.app__searchbox-input-field {
+  font-size: 1rem;
+  padding-right: 0.5rem;
+  flex: 1;
+  border: none;
+  font-weight: 500;
+  outline: none;
+  color: var(--light-pink);
+  background: var(--light-black);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.app__searchbox-input-icon {
+  width: 1.3rem;
+  height: 1.3rem;
+  cursor: pointer;
+}
+
+.app__searchbox-dropdown {
+  font-size: 1rem;
+  width: 100%;
+  background: var(--light-black);
+}
+
+.app__searchbox-dropdown ul {
+  list-style-type: none;
+  padding: 0;
+  border-radius: 0 0 1rem 1rem;
+}
+
+.app__searchbox-dropdown ul li {
+  padding: 0.4rem 0.7rem;
+}
+
+.app__searchbox-dropdown ul li:hover {
+  background-color: var(--transparent-black-2);
+  cursor: pointer;
+}
+
+/* FILTER BUTTONS STYLING */
+
+.app__filters {
+  width: 90%;
+  gap: 1rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+
+.app__filters-filter {
+  width: 50%;
+  border-radius: 0.7rem;
+  background-color: var(--light-black);
+  border: 0.08rem solid var(--light-pink);
+  overflow: hidden;
+}
+
+.app__filters-filter-btn {
+  padding: 0.4rem 0.2rem 0.3rem;
+  font-size: 1rem;
+  border-radius: 0.7rem;
+  background-color: var(--light-black);
+  color: var(--light-pink);
+  width: 100%;
+  font-family: var(--font-bebas-neue);
+  letter-spacing: 0.1rem;
+  cursor: pointer;
+}
+
+.app__filters-filter ul {
+  border-radius: 0 0 0.7rem 0.7rem;
+  font-size: 1rem;
+  list-style-type: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.app__filters-filter ul li {
+  padding: 0.3rem 0.5rem;
+}
+
+.app__filters-filter ul li:hover {
+  background-color: var(--transparent-black-2);
+  cursor: pointer;
+}
+
+.app__filters-filter--active {
+  background-color: var(--light-pink);
+  color: var(--light-black);
+}
+
+.app__filters-filter--neutral {
+  background-color: var(--light-black);
+}
+
+/* MOVIES GALLERY STYLING */
+
+.app__empty {
+  margin-top: 4rem;
+  font-size: 1.5rem;
+  font-family: var(--font-bebas-neue);
+}
+
+.app__empty span {
+  display: block;
+  text-align: center;
+  letter-spacing: 0.2rem;
+}
+
+.app__gallery {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.app__gallery-movie {
+  width: 19.375rem;
+  height: 28.75rem;
+  margin: 1.5rem;
+  position: relative;
+  border-radius: 0.8rem;
+  overflow: hidden;
+  border: none;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0, 1);
+  box-shadow: 0px 13px 10px -7px rgba(0, 0, 0, 0.1);
+}
+
+.app__gallery-filler {
+  width: 19.375rem;
+  height: 28.75rem;
+  margin: 1.5rem;
+  border-radius: 12px;
+  overflow: hidden;
+  border: none;
+  display: none;
+}
+
+.app__gallery-movie:hover {
+  box-shadow: 0px 30px 18px -8px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05, 1.05);
+}
+
+.app__gallery-movie div:nth-of-type(1) {
+  position: absolute;
+  padding: 1rem;
+  font-size: 1.1rem;
+  width: 100%;
+  opacity: 0;
+  top: 0;
+}
+
+.app__gallery-movie:hover div:nth-of-type(1) {
+  opacity: 1;
+}
+
+.app__gallery-movie div:nth-of-type(2) {
+  width: 100%;
+  height: 100%;
+}
+
+.app__gallery-movie div:nth-of-type(2) img {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.app__gallery-movie:hover div:nth-of-type(2) {
+  height: 100%;
+  opacity: 0.2;
+}
+
+.app__gallery-movie div:nth-of-type(3) {
+  background-color: var(--gray);
+  padding: 1.2rem;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 25%;
+  display: grid;
+  gap: 0.4rem;
+  overflow-y: scroll;
+}
+
+.app__gallery-movie div:nth-of-type(3) span {
+  font-family: var(--font-bebas-neue);
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  letter-spacing: 0.15rem;
+  font-weight: 500;
+  color: var(--white);
+}
+
+.app__gallery-movie div:nth-of-type(3) h3 {
+  font-weight: 300;
+  line-height: 1.2;
+  font-size: 1rem;
+}
+
+.app__gallery-movie:hover div:nth-of-type(3) {
+  background-color: transparent;
+}
+
+/* MEDIA QUERIES */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+
+  .app {
+    padding: 1rem;
   }
-  to {
-    transform: rotate(360deg);
+
+  .app__title {
+    font-size: 4rem;
+  }
+  
+  .app__filters-filter {
+    width: 25%;
+  }
+
+  .app__empty {
+    margin-top: 5rem;
+    font-size: 2rem;
+  }
+  
+  .app__empty span {
+    display: inline;
   }
 }
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+  .app__title {
+    font-size: 5rem;
+  }
+
+  .app__searchbox {
+    width: 80%;
+    border-radius: 1.3rem;
+  }
+
+  .app__searchbox-input {
+    padding: 0.9rem 1.2rem;
+    border-radius: 1.3rem;
+  }
+
+  .app__searchbox-input-field {
+    font-size: 1.3rem;
+  }
+
+  .app__searchbox-input-icon {
+    width: 1.7rem;
+    height: 1.7rem;
+  }
+
+  .app__searchbox-dropdown {
+    font-size: 1.3rem;
+  }
+
+  .app__searchbox-dropdown ul {
+    border-radius: 0 0 1.3rem 1.3rem;
+  }
+
+  .app__searchbox-dropdown ul li {
+    padding: 0.6rem 1.2rem;
+  }
+
+  .app__filters {
+    width: 85%;
+  }
+
+  .app__filters-filter {
+    width: 25%;
+  }
+
+  .app__filters-filter-btn {
+    padding: 0.5rem 0.3rem 0.4rem;
+    font-size: 1.15rem;
+  }
+
+  .app__filters-filter ul {
+    font-size: 1.15rem;
+  }
+  
+  .app__filters-filter ul li {
+    padding: 0.3rem 0.6rem;
+  }
+
+  .app__gallery-movie div:nth-of-type(1) {
+    font-size: 1.2rem;
+  }
+
+  .app__gallery-movie div:nth-of-type(3) {
+    height: 27%;
+  }
+
+  .app__gallery-movie div:nth-of-type(3) h3 {
+    font-size: 1rem;
+  }
+  
+  .app__gallery-movie div:nth-of-type(3) span {
+    font-size: 1.2rem;
+  }
+
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+
+  .app__searchbox {
+    width: 70%;
+    border-radius: 1.3rem;
+  }
+
+  .app__searchbox-input {
+    padding: 1rem 1.4rem;
+  }
+
+  .app__searchbox-dropdown ul li {
+    padding: 0.8rem 1.4rem;
+  }
+
+  .app__filters-filter {
+    width: 20%;
+  }
+
+  .app__empty {
+    font-size: 2.2rem;
+  }
+
+  .app__gallery-movie div:nth-of-type(1) {
+    font-size: 1.3rem;
+  }
+
+  .app__gallery-movie div:nth-of-type(3) {
+    height: 27%;
+    gap: 0.5rem;
+  }
+  
+  .app__gallery-movie div:nth-of-type(3) span {
+    font-size: 1.3rem;
+  }
+
+  .app__gallery-movie div:nth-of-type(3) h3 {
+    font-size: 1.2rem;
+  }
+
+}
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+  .app {
+    padding: 3rem;
+    gap: 2.5rem;
+  }
+
+  .app__searchbox {
+    width: 65%;
+    border-radius: 1.7rem;
+  }
+
+  .app__searchbox-input {
+    border-radius: 1.7rem;
+  }
+  
+  .app__searchbox-input-field {
+    font-size: 1.5rem;
+    padding-right: 1rem;
+  }
+  
+  .app__searchbox-input-icon {
+    width: 2.3rem;
+    height: 2.3rem;
+  }
+  
+  .app__searchbox-dropdown {
+    font-size: 1.5rem;
+  }
+  
+  .app__searchbox-dropdown ul {
+    border-radius: 0 0 1.7rem 1.7rem;
+  }
+
+  .app__gallery-filler {
+    display: block;
+  }
+
+  .app__filters {
+    gap: 3rem;
+    width: 75%;
+  }
+  
+  .app__filters-filter {
+    width: 20%;
+    border-radius: 1rem;
+  }
+  
+  .app__filters-filter-btn {
+    border-radius: 1rem;
+    padding: 0.6rem 0.4rem 0.45rem;
+    font-size: 1.3rem;
+  }
+  
+  .app__filters-filter ul {
+    border-radius: 0 0 1rem 1rem;
+    font-size: 1.2rem;
+  }
+  
+  .app__filters-filter ul li {
+    padding: 0.5rem 0.8rem;
+  }
+
+}
+
+

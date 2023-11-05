@@ -1,70 +1,88 @@
-# Getting Started with Create React App
+# JavaScript Mastery - React Movie App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a website built following Adrian's tutorial. He published a video on his YouTube channel, [JavaScript Mastery](https://www.youtube.com/@javascriptmastery), teaching how to build a React app. Thanks to him, it was really helpful!
 
-## Available Scripts
+## Table of contents
 
-In the project directory, you can run:
+- [Overview](#overview)
+  - [The tutorial](#the-tutorial)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Customization](#customization)
+- [Author](#author)
 
-### `npm start`
+## Overview
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### The tutorial
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+In his 1h video course, Adrian starts by teaching you React's most important concepts. Then, time to practice! You are invited to code along while he's showing you how to create a basic movie website. 
 
-### `npm test`
+**The video is organized in 3 parts:**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+ 1. Overview
+ 2. React in Practice
+ 3. Developing a Project
 
-### `npm run build`
+### Screenshot
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![](./images/movieland-desktop.jpg)
+![](./images/movieland-tablet.jpg)
+![](./images/movieland-mobile.jpg)
+![](./images/movieland-dropdown.jpg)
+![](./images/movieland-filter.jpg)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Links
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Tutorial URL: [React JS Full Course 2023 | Build an App and Master React in 1 Hour](https://www.youtube.com/watch?v=b9eMGE7QtTk)
+- Live Site URL: [Live Movie Website](https://leo-code-ca.github.io/first-react-movie-app/)
 
-### `npm run eject`
+## My process
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Built with
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+- CSS custom properties 
+- BEM (at least I tried!)
+- React JS
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+### What I learned
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+It's actually my first ever React project! I'm so, so happy of it! It's probably one of the projects that taught me the most but also one of the projects that made me struggle the most!!
 
-## Learn More
+Before starting this tutorial, I already had a basic understanding of React as I went through most of their documentation and I also completed FreeCodeCamp's and W3School's courses. However, I had never built something with that knowledge! 
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Following the tutorial was actually pretty easy and I understood most of Adrian's explanations. The true problems started when I decided that the project was looking good but... I wanted to add a few features to it. At this point, alone facing my code, I spent hours and hours trying to figure out how to create what I wanted, to finally find out barely acceptable solutions. Frustrating but, part of the learning process I guess! 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To be honest, I spent days on this project. Globally, I'm satisfied of it (for a first project) and most important... I can't wait to learn and build more with React! It looks to be so powerful!
 
-### Code Splitting
+Let's list what I've learned during this project: 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+ - Use React on VS Code 
+ - Create a React environment 
+ - React concepts (components, states, props)
+ - Fetch API
+ - Loop over arrays to create list elements 
+ - Dynamic search bar with suggestions
+ - Buttons that allow filtering 
 
-### Analyzing the Bundle Size
+### Customization
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+When I was done with the tutorial, I was so eager that add many functionalities to the app, to make it look closer from "those true apps out there"! 
 
-### Making a Progressive Web App
+My expectations quickly faded out when I understood the actual complexity of what I wanted to implement! However, I didn't give up! I did less than what I hoped but I still did something, decent, I think!
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Let’s list the main changes I made to the project:
 
-### Advanced Configuration
+ - Add a dropdown to the search bar
+ - Make the search bar dynamic by showing suggestions 
+ - Add filter buttons
+ - Add a dropdown with options for filtering 
+ - Different color for the active item 
+ - Add more media-queries for responsiveness
+ - Slightly modify the design  
+## Author
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- GitHub - [@Leo-Code-CA](https://github.com/Leo-Code-CA)
+- FreeCodeCamp - [@Leo-code](https://www.freecodecamp.org/Leo-code)
